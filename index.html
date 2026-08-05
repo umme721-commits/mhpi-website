@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maternal Health Policy Institute | MHPI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --navy:#0B1F3A;
+    --navy-dark:#071527;
+    --slate:#5E6B7A;
+    --light:#F6F8FB;
+    --border:#E5EAF1;
+    --white:#FFFFFF;
+    --accent:#2C7BE5;
+    --shadow:0 15px 40px rgba(11,31,58,.08);
+    --radius:18px;
+    --container:1200px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--white);
+    color:var(--navy);
+    line-height:1.65;
+}
+
+img{
+    max-width:100%;
+}
+
+.container{
+    width:min(92%,var(--container));
+    margin:auto;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:1.25rem;
+    font-weight:800;
+    color:var(--navy);
+}
+
+nav ul{
+    display:flex;
+    gap:2rem;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--slate);
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--accent);
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero{
+    background:linear-gradient(135deg,#071527 0%,#0B1F3A 100%);
+    color:white;
+    padding:120px 0;
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:clamp(2.8rem,6vw,4.6rem);
+    line-height:1.1;
+    margin-bottom:1.5rem;
+}
+
+.hero p{
+    color:#D7E1EE;
+    font-size:1.15rem;
+    max-width:620px;
+    margin-bottom:2rem;
+}
+
+.cta{
+    display:inline-block;
+    background:white;
+    color:var(--navy);
+    text-decoration:none;
+    padding:16px 34px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(255,255,255,.2);
+}
+
+.hero-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:22px;
+    padding:40px;
+    backdrop-filter:blur(20px);
+}
+
+.hero-card h3{
+    margin-bottom:1rem;
+}
+
+.hero-card ul{
+    padding-left:1rem;
+    color:#D7E1EE;
+}
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:4rem;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    margin-bottom:.75rem;
+}
+
+.section-title p{
+    color:var(--slate);
+}
+
+/* ---------------- ABOUT ---------------- */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:3rem;
+}
+
+.founder{
+    background:var(--light);
+    border-radius:var(--radius);
+    padding:40px;
+    border:1px solid var(--border);
+}
+
+.founder h3{
+    margin-bottom:1rem;
+}
+
+.advisors{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+}
+
+.advisor{
+    background:white;
+    border:1px solid var(--border);
+    padding:32px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.advisor h4{
+    margin-bottom:.75rem;
+}
+
+/* ---------------- PROJECTS ---------------- */
+
+.projects{
+    background:var(--light);
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+}
+
+.card{
+    background:white;
+    border-radius:var(--radius);
+    padding:35px;
+    border:1px solid var(--border);
+    transition:.35s;
+    box-shadow:var(--shadow);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:1rem;
+}
+
+/* ---------------- BLOG ---------------- */
+
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:2rem;
+}
+
+.blog-card{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:30px;
+    background:white;
+    transition:.3s;
+}
+
+.blog-card:hover{
+    box-shadow:var(--shadow);
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    background:#EEF5FF;
+    color:var(--accent);
+    border-radius:50px;
+    font-size:.8rem;
+    font-weight:600;
+    margin-bottom:1rem;
+}
+
+.blog-card h3{
+    margin-bottom:1rem;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+    background:var(--navy-dark);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer p{
+    color:#CBD6E2;
+    margin:.4rem 0;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:950px){
+
+.hero-grid,
+.project-grid,
+.advisors{
+grid-template-columns:1fr;
+}
+
+nav ul{
+display:none;
+}
+
+.hero{
+padding:90px 0;
+}
+
+.hero-card{
+margin-top:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav">
+
+<div class="logo">
+Maternal Health Policy Institute
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#insights">Insights</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<h1>Advancing Maternal Workforce Equity &amp; Public Health Outcomes</h1>
+
+<p>
+An independent think tank driving policy, research, and data-backed interventions for maternal health.
+</p>
+
+<a href="#projects" class="cta">
+Explore Our Work
+</a>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Policy. Research. Innovation.</h3>
+
+<ul>
+<li>Evidence-based policy development</li>
+<li>Maternal workforce equity initiatives</li>
+<li>Health systems research</li>
+<li>Community-centered innovation</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>About Us</h2>
+<p>Building evidence that shapes healthier futures for mothers and families.</p>
+</div>
+
+<div class="about-grid">
+
+<div class="founder">
+
+<h3>The Founder</h3>
+
+<p>
+A dedicated public health professional focused on bridging the gap between state policy and maternal health outcomes. Through interdisciplinary collaboration, data-driven research, and community-centered solutions, the Institute advances practical policy interventions that improve maternal health, workforce participation, and health equity.
+</p>
+
+</div>
+
+<div>
+
+<h3 style="margin-bottom:2rem;">Advisory Board</h3>
+
+<div class="advisors">
+
+<div class="advisor">
+<h4>Legal Advisor</h4>
+<p>
+Focusing on state policy and medical-legal partnerships.
+</p>
+</div>
+
+<div class="advisor">
+<h4>Education Advisor</h4>
+<p>
+Focusing on community health outreach and curriculum.
+</p>
+</div>
+
+<div class="advisor">
+<h4>AI &amp; Tech Advisor</h4>
+<p>
+Focusing on data infrastructure and digital interventions.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="projects" id="projects">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Projects Portfolio</h2>
+
+<p>
+Transforming maternal health through innovative policy tools and research.
+</p>
+
+</div>
+
+<div class="project-grid">
+
+<div class="card">
+
+<h3>MaternaMap</h3>
+
+<p>
+A data-driven, county-level dashboard monitoring maternal care deserts, hospital closures, and regional access gaps.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>MaaSaath</h3>
+
+<p>
+A digital prototype and support tool featuring localized WhatsApp audio integration (including Urdu and Pashto accessibility) for maternal support.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Worker Pregnancy Clinic Kit</h3>
+
+<p>
+A medical-legal partnership toolkit providing actionable workplace protections and policy resources for pregnant patients.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="insights">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Insights &amp; Research</h2>
+
+<p>
+Thought leadership, policy briefs, and research updates.
+</p>
+
+</div>
+
+<div class="blog-grid">
+
+<div class="blog-card">
+
+<div class="badge">Policy Brief</div>
+
+<h3>Navigating the $70B Productivity Tax</h3>
+
+<p>
+Placeholder for future policy brief discussing maternal workforce participation and economic impact.
+</p>
+
+</div>
+
+<div class="blog-card">
+
+<div class="badge">Research</div>
+
+<h3>Evaluating State-Level Maternal Mental Health Report Cards</h3>
+
+<p>
+Placeholder for comparative research evaluating maternal mental health policy implementation.
+</p>
+
+</div>
+
+<div class="blog-card">
+
+<div class="badge">Insights</div>
+
+<h3>Future Research &amp; Commentary</h3>
+
+<p>
+Additional articles, reports, dashboards, and public health analyses will be published here.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<div class="container">
+
+<h3>Maternal Health Policy Institute</h3>
+
+<p>Email: contact@yourdomain.org</p>
+
+<p>Data-driven policy for sustainable maternal health.</p>
+
+<p>
+© 2026 Maternal Health Policy Institute. All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
